@@ -5,10 +5,22 @@
     <title>GADS Forms</title>
   </head>
   <body>
+<script>
+        function submitForm(event) {
+            event.preventDefault(); // 防止表單直接提交
 
-<iframe name="iframe_redirect" id="iframe_redirect" style="display:none;"> </iframe>
+            // 顯示提交成功的提示
+            alert("表單提交成功！");
 
-<form  target="_blank" class="" action="https://www.gads.tw/ads-cost/thankyou" method="post">
+            // 模擬提交後的處理（可以在這裡進行 AJAX 請求等）
+
+            // 等待 1 秒後跳轉到新的頁面
+            setTimeout(function() {
+                window.location.href = "https://www.gads.tw/ads-cost/thankyou"; // 替換成你的目標網址
+            }, 1000);
+        }
+    </script>
+<form  onsubmit="submitForm(event)"  class="" action="" method="post">
 <table style="width: 90%;text-align:center;">
 <tr>
 <td style="width: 20%"><p> 公司名稱 </p></td>
