@@ -3,23 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>GADS Forms</title>
-  </head>
-  <body>
-<script>
+    
+    <script>
         function submitForm(event) {
             event.preventDefault(); // 防止表單直接提交
 
             // 顯示提交成功的提示
             alert("表單提交成功！");
 
-            // 模擬提交後的處理（可以在這裡進行 AJAX 請求等）
-
-            // 等待 1 秒後跳轉到新的頁面
-            setTimeout(function() {
-                window.location.href = "https://www.gads.tw/ads-cost/thankyou"; // 替換成你的目標網址
-            }, 1000);
+            // 通知父頁面進行跳轉或其他動作
+            window.parent.postMessage({
+                action: 'redirect',
+                url: 'https://www.gads.tw/ads-cost/thankyou'  // 替換成你想跳轉的頁面
+            }, '*'); // '*' 是指允許向任意來源的父頁面傳送消息
         }
     </script>
+  </head>
+  
+  <body>   
 <form  onsubmit="submitForm(event)"  class="" action="" method="post">
 <table style="width: 90%;text-align:center;">
 <tr>
